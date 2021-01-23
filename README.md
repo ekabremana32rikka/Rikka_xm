@@ -1,4 +1,5 @@
-# botst4rz
+# Rikka takanashi
+
 BOT WHATSAPP HP BremanaxRikka
 
 ### Alat dan Bahan
