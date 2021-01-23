@@ -18,7 +18,7 @@ Sebelum lu jalanin sc nya install dulu lah.
 > kalo lu belum punya apk termux, download di playstore
 > masuk ke apk termux lalu ketik dibawah ini!
 > masukkin https://github.com/ekabremana32rikka/Rikka_xm.git
-> cd botst4rz
+> cd Rikka_xm
 > bash install.sh
 > node index.js
 > Tinggal scan qr dah
