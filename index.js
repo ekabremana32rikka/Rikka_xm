@@ -17,7 +17,8 @@ const instagramlu = 'Gk punya'; // Nama Instagramlu cok
 const whatsapplu = '083846382999'; // Nomor whatsapplu cok
 const kapanbotaktif = 'Siang Dan Malam'; // Kapan bot lu aktif
 const grupch1 = 'https://chat.whatsapp.com/FsAlnxqz6y2BhCQi5ayCLG'; // OFFICIAL GRUP LU 1
-const grupch2 = 'https://chat.whatsapp.com/C2mS8MdY9540rATja6UVRo'
+const grupch2 = 'https://chat.whatsapp.com/C2mS8MdY9540rATja6UVRo'; // OFFICIAL GRUP LU 2
+
 //
 const
 {
