@@ -1,5 +1,5 @@
 # botst4rz
-BOT WHATSAPP HP BINTANG NUR PRADANA
+BOT WHATSAPP Hp Brema X Rikka
 
 ### Alat dan Bahan
 Siapin alat dan bahannya.
