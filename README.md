@@ -1,4 +1,4 @@
-# botst4rz
+# Rikka_xm
 BOT WHATSAPP Hp Brema X Rikka
 
 ### Alat dan Bahan
