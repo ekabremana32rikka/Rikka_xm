@@ -1,6 +1,6 @@
 <div align="center">
 
-# Bremana x Rikka
+# bremana Bots
 
 > Multipurpose WhatsApp bot using Baileys library!
 >
