@@ -1,6 +1,6 @@
 <div align="center">
 
-# BremanaxRikka
+# Eden Bot
 
 > Multipurpose WhatsApp bot using Baileys library!
 >
@@ -29,5 +29,5 @@ To find out the bot features use the command !menu
 * [`Nurutomo/wabot-aq`](https://github.com/Nurutomo/wabot-aq)
 * [`ArugaZ`](https://github.com/ArugaZ)
 * [`MhankBarBar`](https://github.com/MhankBarBar)
-* [`Eden-Bot`] (https://github.com/revanapriyandi/Eden-bot)
+
 
