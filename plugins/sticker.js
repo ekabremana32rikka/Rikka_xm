@@ -2,21 +2,25 @@ const fetch = require('node-fetch')
 const FormData = require('form-data')
 const { MessageType } = require('@adiwajshing/baileys')
 
-let handler  = async (m, { conn, text }) => {
-  if (text) {
-    let res = await fetch('https://api.areltiyan.site/sticker_maker?text=' + encodeURIComponent(text))
-    let json = await res.json()
-    let img = Buffer.from(json.base64.split`,`[1], 'base64')
+let handler  = async (m, { conn, args }) => {
+  let q = m.quoted ? { message: { [m.quoted.mtype]: m.quoted }} : m
+  if (/image/.test((m.quoted ? m.quoted : m).mtype)) {
+    let img = await conn.downloadM(q)
     if (!img) throw img
     let stiker = await sticker(img)
     conn.sendMessage(m.chat, stiker, MessageType.sticker, {
       quoted: m
     })
+  } else if (args[0]) {
+    let stiker = await sticker(false, args[0])
+    conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+      quoted: m
+    })
   }
 }
-handler.help = ['ttp <teks>']
+handler.help = ['stiker (caption|reply media)', 'stiker <url>']
 handler.tags = ['sticker']
-handler.command = /^ttp$/i
+handler.command = /^stic?ker$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false

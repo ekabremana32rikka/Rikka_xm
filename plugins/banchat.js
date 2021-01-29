@@ -1,12 +1,10 @@
-let handler = async(m, { conn, participants }) => {
-    // if (participants.map(v => v.jid).includes(global.conn.user.jid)) {
-    global.DATABASE._data.chats[m.chat].isBanned = true
-    m.reply('Done!')
-        // } else m.reply('Ada nomor host disini...')
+let handler = async (m, { conn }) => {
+  global.DATABASE._data.chats[m.chat].isBanned = true
+  m.reply('Done!')
 }
 handler.help = ['banchat']
-handler.tags = ['owner']
+handler.tags = ['mods']
 handler.command = /^banchat$/i
-handler.owner = true
+handler.mods = true
 
 module.exports = handler
