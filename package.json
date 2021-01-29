@@ -1,5 +1,5 @@
 {
-    "name": "bremana Bots",
+    "name": "bremana bot",
     "version": "1.0.0",
     "description": "Customizable WhatsApp Bot",
     "main": "index.js",
@@ -16,7 +16,7 @@
         "termux-whatsapp-bot",
         "whatsapp-bot"
     ],
-    "author": "Revanapriyandi",
+    "author": "bremana bot",
     "license": "ISC",
     "dependencies": {
         "@adiwajshing/baileys": "^3.4.1",
