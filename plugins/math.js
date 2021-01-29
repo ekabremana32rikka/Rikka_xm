@@ -1,19 +1,25 @@
 global.math = global.math ? global.math : {}
-let handler  = async (m, { conn, args, usedPrefix }) => {
-  if (args.length < 1) return conn.reply(m.chat, 'Mode: noob | easy | medium | hard | extreme\n\nContoh penggunaan: ' + usedPrefix + 'math medium', m)
-  let mode = args[0].toLowerCase()
-  if (!(mode in modes)) return conn.reply(m.chat, 'Mode: noob | easy | medium | hard | extreme\n\nContoh penggunaan: ' + usedPrefix + 'math medium', m)
-  let id = m.chat
-  if (id in global.math) return conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', global.math[id][0])
-  let math = genMath(mode)
-  global.math[id] = [
-    await conn.reply(m.chat, `Berapa hasil dari *${math.str}*?\n\nTimeout: ${(math.time / 1000).toFixed(2)} detik\nBonus Jawaban Benar: ${math.bonus} XP`, m),
-    math, 4,
-    setTimeout(() => {
-      if (global.math[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah ${math.result}`, global.math[id][0])
-      delete global.math[id]
-    }, math.time)
-  ]
+let handler = async(m, { conn, args, usedPrefix }) => {
+    if (args.length < 1) return conn.reply(m.chat, `
+Mode: ${Object.keys(modes).join(' | ')}
+Contoh penggunaan: ${usedPrefix}math medium
+`.trim(), m)
+    let mode = args[0].toLowerCase()
+    if (!(mode in modes)) return conn.reply(m.chat, `
+Mode: ${Object.keys(modes).join(' | ')}
+Contoh penggunaan: ${usedPrefix}math medium
+`.trim(), m)
+    let id = m.chat
+    if (id in global.math) return conn.reply(m.chat, 'Masih ada soal belum terjawab di chat ini', global.math[id][0])
+    let math = genMath(mode)
+    global.math[id] = [
+        await conn.reply(m.chat, `Berapa hasil dari *${math.str}*?\n\nTimeout: ${(math.time / 1000).toFixed(2)} detik\nBonus Jawaban Benar: ${math.bonus} XP`, m),
+        math, 4,
+        setTimeout(() => {
+            if (global.math[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah ${math.result}`, global.math[id][0])
+            delete global.math[id]
+        }, math.time)
+    ]
 }
 handler.help = ['math <mode>']
 handler.tags = ['game']
@@ -22,26 +28,28 @@ handler.command = /^math/i
 module.exports = handler
 
 let modes = {
-  noob: [-3, 3,-3, 3, '+-', 20000, 35],
-  easy: [-10, 10, -10, 10, '+-', 30000, 50],
-  medium: [-40, 40, -20, 20, '*/+-', 50000, 150],
-  hard: [-100, 100, -70, 70, '*/+-', 60000, 400],
-  extreme: [-999999, 999999, -999999, 999999, '*/+-', 300000, 9999]
+    noob: [-3, 3, -3, 3, '+-', 15000, 10],
+    easy: [-10, 10, -10, 10, '*/+-', 20000, 40],
+    medium: [-40, 40, -20, 20, '*/+-', 40000, 150],
+    hard: [-100, 100, -70, 70, '*/+-', 60000, 350],
+    extreme: [-999999, 999999, -999999, 999999, '*/', 99999, 9999],
+    impossible: [-99999999999, 99999999999, -99999999999, 999999999999, '*/', 50000, 35000],
+    impossible2: [-999999999999999, 999999999999999, -999, 999, '/', 70000, 50000]
 }
 
 let operators = {
-  '+': '+',
-  '-': '-',
-  '*': '×',
-  '/': '÷'
+    '+': '+',
+    '-': '-',
+    '*': '×',
+    '/': '÷'
 }
 
 function genMath(mode) {
-  let [a1, a2, b1, b2, ops, time, bonus] = modes[mode]
-  let a = randomInt(a1, a2)
-  let b = randomInt(b1, b2)
-  let op = pickRandom([...ops])
-  let result = (new Function(`return ${a} ${op.replace('/', '*')} ${b < 0 ? `(${b})` : b}`))()
+    let [a1, a2, b1, b2, ops, time, bonus] = modes[mode]
+    let a = randomInt(a1, a2)
+    let b = randomInt(b1, b2)
+    let op = pickRandom([...ops])
+    let result = (new Function(`return ${a} ${op.replace('/', '*')} ${b < 0 ? `(${b})` : b}`))()
   if (op == '/') [a, result] = [result, a]
   return {
     str: `${a} ${operators[op]} ${b}`,

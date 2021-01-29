@@ -2,17 +2,17 @@ const fetch = require('node-fetch')
 const FormData = require('form-data')
 const { MessageType } = require('@adiwajshing/baileys')
 
-let handler  = async (m, { conn, text }) => {
-  if (text) {
-    let res = await fetch('https://api.areltiyan.site/sticker_maker?text=' + encodeURIComponent(text))
-    let json = await res.json()
-    let img = Buffer.from(json.base64.split`,`[1], 'base64')
-    if (!img) throw img
-    let stiker = await sticker(img)
-    conn.sendMessage(m.chat, stiker, MessageType.sticker, {
-      quoted: m
-    })
-  }
+let handler = async(m, { conn, text }) => {
+    if (text) {
+        let res = await fetch('https://api.areltiyan.site/sticker_maker?text=' + encodeURIComponent(text))
+        let json = await res.json()
+        let img = Buffer.from(json.base64.split `,` [1], 'base64')
+        if (!img) throw img
+        let stiker = await sticker(img)
+        conn.sendMessage(m.chat, stiker, MessageType.sticker, {
+            quoted: m
+        })
+    }
 }
 handler.help = ['ttp <teks>']
 handler.tags = ['sticker']
@@ -55,7 +55,7 @@ async function sticker(img, url) {
     url = url ? url : await uploadImage(img)
     let {
         mime
-    } = url ? {mime:'image/jpeg'} : await fromBuffer(img)
+    } = url ? { mime: 'image/jpeg' } : await fromBuffer(img)
     let sc = `let im = await loadImg('data:${mime};base64,'+(await window.loadToDataURI('${url}')))
 c.width = c.height = 512
 let max = Math.max(im.width, im.height)
@@ -67,7 +67,7 @@ ctx.drawImage(im, 256 - w / 2, 256 - h / 2, w, h)
 }
 
 function uploadImage(buffer) {
-    return new Promise(async (resolve, reject) => {
+    return new Promise(async(resolve, reject) => {
         try {
             const {
                 ext
