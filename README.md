@@ -2,7 +2,7 @@
 <img src="https://media.giphy.com/media/4dM1U76aAQ3dbE6bc3/giphy.gif" width="128" height="128"/>
 
 <p align="center">
-<a href="#"><img title="bremanabot" src="https://img.shields.io/badge/cr4r BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+<a href="#"><img title="bremanabot" src="https://img.shields.io/badge/bremana BOT-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 
 # bremanabot
 
