@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/ekabremana32rikka/whatsapp-bot/master/media/img/Rikka.png" width="128" height="128"/>
+<img src="https://raw.githubusercontent.com/ekabremana32rikka/whatsapp-bot/master/media/img/Rikka.png" width="300" height="300"/>
 
 # bremanabot
 
