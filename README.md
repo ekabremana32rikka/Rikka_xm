@@ -4,7 +4,7 @@
 # bremanabot
 
 > Multipurpose WhatsApp bot using Baileys library!
->
+> Baru Belajar
 >
 
 </div>
