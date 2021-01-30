@@ -19,10 +19,10 @@ let handler = async(m, { conn, text }) => {
 handler.help = ['fitnah']
 handler.tags = ['random']
 handler.command = /^(fitnah|fakereply)$/
-handler.owner = false
+handler.owner = true
 handler.mods = false
 handler.premium = false
-handler.group = false
+handler.group = true
 handler.private = false
 
 handler.admin = false
