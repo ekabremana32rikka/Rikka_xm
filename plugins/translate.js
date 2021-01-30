@@ -1,34 +1,14 @@
-const axios = require('axios')
+const { default: translate } = require('google-translate-open-api')
 
-let handler = async(m, { conn, text, usedPrefix }) => {
+/**
+ * Translate Text
+ * @param  {String} text
+ * @param  {String} lang
+ */
 
-    if (!text) return conn.reply(m.chat, 'Contoh penggunaan: ' + usedPrefix + 'ts id | my name is eden', m)
-
-    let [kode, kalimat] = text.split `|`
-
-    if (!kode) return conn.reply(m.chat, 'Masukkan kode bahasa ', m)
-    if (!kalimat) return conn.reply(m.chat, 'Masukkan yang mau di translate', m)
-
-    new Promise((resolve, reject) => {
-        axios.get(`https://arugaz.my.id/api/edu/translate?lang=${kode}&text=` + encodeURIComponent(kalimat))
-            .then((res) => {
-                conn.reply(m.chat, res.data.text, m)
-            })
-            .catch(reject)
-    })
-}
-handler.help = ['translate <kata>']
-handler.tags = ['internet']
-handler.command = /^(translate|ts)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-
-module.exports = handler
+module.exports = doing = (text, lang) => new Promise((resolve, reject) => {
+    console.log(`Translate text to ${lang}...`)
+    translate(text, { tld: 'cn', to: lang })
+        .then((text) => resolve(text.data[0]))
+        .catch((err) => reject(err))
+})
