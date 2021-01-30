@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://raw.githubusercontent.com/ekabremana32rikka/whatsapp-bot/master/media/img/Kaguya.png" width="128" height="128"/>
+<img src="https://https://hero.fandom.com/wiki/Rikka_Takanashi/ekabremana32rikka/whatsapp-bot/master/media/img/Rikkatakanashi.png" width="128" height="128"/>
 
 # bremanabot
 
