@@ -20,10 +20,10 @@ let handler = async(m, { conn, text }) => {
 handler.help = ['tiktok <url>']
 handler.tags = ['downloader']
 handler.command = /^tiktok$/i
-handler.owner = true
-handler.mods = true
-handler.premium = true
-handler.group = true
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
 handler.private = true
 
 handler.admin = false
