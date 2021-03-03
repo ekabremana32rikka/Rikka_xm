@@ -6,13 +6,13 @@ let handler = async(m, { conn, args, isPrems, isOwner }) => {
     let { dl_link, thumb, title, filesize, filesizeF } = await ytv(args[0])
     let isLimit = (isPrems || isOwner ? 10000 : limit) * 1024 < filesize
     conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+*Title ➸:* ${title}
+*Filesize➸ :* ${filesizeF}
+*${isLimit ? 'Pakai ': ''}Lagu Sedang Dikirim.... Mungkin memakan waktu cukup lama.
 `.trim(), m)
     if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp3', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
+*Title➸:* ${title}
+*Filesize➸:* ${filesizeF}
 `.trim(), m, false, { asDocument: true })
 }
 handler.help = ['mp3', 'a'].map(v => 'yt' + v + ' <url>')
