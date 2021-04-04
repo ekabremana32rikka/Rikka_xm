@@ -1,13 +1,13 @@
-console.log('Starting...')
+console.log('Memulai untuk dihargai...')
 let { spawn } = require('child_process')
 let path = require('path')
 const CFonts = require('cfonts')
-CFonts.say('EDEN WHATSAPP BOT', {
+CFonts.say('BOT WHATSAPP BY BREMANA', {
     font: 'chrome',
     align: 'center',
     gradient: ['red', 'magenta']
 })
-CFonts.say('\'Eden-Bot\' By @Revanapriyandi', {
+CFonts.say('\'WhatsGood Qanst\' By BremamaxRikka', {
     font: 'console',
     align: 'center',
     gradient: ['red', 'magenta']
