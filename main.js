@@ -195,10 +195,10 @@ conn.handler = async function(m) {
 conn.on('message-new', conn.handler)
 conn.on('error', conn.logger.error)
 global.mods = [
-    "6285277566353@s.whatsapp.net"
+    "6281261266674@s.whatsapp.net"
 ]
 global.prems = [
-    "685277566353@s.whatsapp.net"
+    "6281261266674@s.whatsapp.net"
 ]
 
 global.dfail = (type, m, conn) => {
