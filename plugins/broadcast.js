@@ -9,8 +9,8 @@ handler.help = ['broadcast', 'bc'].map(v => v + ' <teks>')
 handler.tags = ['owner']
 handler.command = /^(broadcast|bc)$/i
 handler.owner = true
-handler.mods = false
-handler.premium = false
+handler.mods = true
+handler.premium = true
 handler.group = false
 handler.private = false
 
