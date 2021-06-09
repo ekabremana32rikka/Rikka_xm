@@ -10,7 +10,7 @@ handler.tags = ['owner']
 handler.command = /^(broadcast|bc)(group|grup|gc)$/i
 handler.owner = true
 handler.mods = true
-handler.premium = false
+handler.premium = true
 handler.group = false
 handler.private = false
 
